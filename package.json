@@ -1,10 +1,10 @@
 {
-  "name": "pkggraph",
-  "version": "1.0.0",
+  "name": "monorepo-pkg-graph",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "bin": {
-    "pkggraph": "bin/index.js"
+    "monorepo-pkg-graph": "bin/index.js"
   },
   "scripts": {
     "start": "ts-node src/index.ts && open ./graph.svg",
