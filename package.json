@@ -1,6 +1,6 @@
 {
-  "name": "monorepo-pkg-graph",
-  "version": "3.0.0",
+  "name": "@ibasoni12/monorepo-pkg-graph",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "bin": {

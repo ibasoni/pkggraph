@@ -8,7 +8,7 @@ import { render } from "./renderer/dot";
 import type { Options, PackageJson } from "./types";
 import path from "path";
 
-const run = async ({ out, format }: Options) => {
+const run = async ({ out, format, ignore }: Options) => {
   const rootPath = path.resolve(".");
   const paths = await find({
     path: `${rootPath}/**/package.json`,
@@ -20,12 +20,13 @@ const run = async ({ out, format }: Options) => {
   }
 
   const objects = read<PackageJson>(paths);
-  const pkgs = filter(objects);
+  const pkgs = filter({ objects, ignore });
   const data = parse(pkgs);
   render({ data, out, format });
 };
 
 const options = loadOptions();
+console.log(options);
 run(options);
 
 export { find, parse, read, render, filter };

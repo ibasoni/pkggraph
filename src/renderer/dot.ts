@@ -20,6 +20,6 @@ export const render = async ({ data, out, format }: DotRenderOptions) => {
   }
 };
 
-export interface DotRenderOptions extends Options {
+export interface DotRenderOptions extends Omit<Options, "ignore"> {
   data: Data;
 }
