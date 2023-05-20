@@ -3,15 +3,17 @@
   "version": "0.0.2",
   "description": "",
   "main": "index.js",
+  "types": "bin/index.d.ts",
   "bin": {
     "monorepo-pkg-graph": "bin/index.js"
   },
   "scripts": {
     "start": "ts-node src/index.ts && open ./graph.svg",
     "dev": "nodemon",
+    "prebuild": "rm -rf bin",
     "build": "tsc",
     "test": "jest --watchAll --coverage",
-    "publish": "npm publish --access public"
+    "publish": "npm run build && npm publish --access public"
   },
   "keywords": [],
   "author": "",

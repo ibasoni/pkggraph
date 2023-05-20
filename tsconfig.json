@@ -1,7 +1,9 @@
 {
   "extends": "@tsconfig/node16/tsconfig.json",
   "compilerOptions": {
-    "outDir": "bin"
+    "outDir": "bin",
+    "declaration": true,
+    "declarationMap": true
   },
   "include": [
     "src/index.ts"
