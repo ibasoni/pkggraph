@@ -27,3 +27,5 @@ const run = async ({ out, format }: Options) => {
 
 const options = loadOptions();
 run(options);
+
+export { find, parse, read, render, filter };

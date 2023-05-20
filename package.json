@@ -10,7 +10,8 @@
     "start": "ts-node src/index.ts && open ./graph.svg",
     "dev": "nodemon",
     "build": "tsc",
-    "test": "jest --watchAll --coverage"
+    "test": "jest --watchAll --coverage",
+    "publish": "npm publish"
   },
   "keywords": [],
   "author": "",
