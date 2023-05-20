@@ -1,6 +1,6 @@
 {
   "name": "monorepo-pkg-graph",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -11,7 +11,7 @@
     "dev": "nodemon",
     "build": "tsc",
     "test": "jest --watchAll --coverage",
-    "publish": "npm publish"
+    "publish": "npm publish --access public"
   },
   "keywords": [],
   "author": "",
