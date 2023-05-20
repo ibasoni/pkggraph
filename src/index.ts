@@ -1,15 +1,29 @@
+#! /usr/bin/env node
+import { loadOptionsFromCLI } from "./cli";
 import { filter } from "./filter";
 import { find } from "./find";
+import { parse } from "./parse";
 import { read } from "./read";
-import { PackageJson } from "./types";
+import { render } from "./renderer/dot";
+import type { Options, PackageJson } from "./types";
+import path from "path";
 
-(async () => {
-  const rootPath = "../turbo-sample";
+const run = async ({ out, format }: Options) => {
+  const rootPath = path.resolve(".");
   const paths = await find({
     path: `${rootPath}/**/package.json`,
     ignore: `${rootPath}/**/node_modules/**`,
   });
+  if (paths.length === 0) {
+    console.error("No package.json files found in target");
+    process.exit(1);
+  }
+
   const objects = read<PackageJson>(paths);
-  const names = filter(objects);
-  console.log(names);
-})();
+  const pkgs = filter(objects);
+  const data = parse(pkgs);
+  render({ data, out, format });
+};
+
+const options = loadOptionsFromCLI();
+run(options);

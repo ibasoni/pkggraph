@@ -2,6 +2,7 @@ import { describe, expect, test } from "@jest/globals";
 import { read } from "./read";
 import { PackageJson } from "./types";
 import fs from "fs";
+import { createFile, removeFile, tmpFileName } from "./test-utils";
 
 describe("read", () => {
   test("read paths", () => {
@@ -24,8 +25,8 @@ describe("read", () => {
 
   test("throw an error when the file can't be found", () => {
     removeFile();
-    expect(() => read(["23234234.234sdflkj.json"])).toThrow(
-      new Error('Unable to read file at: "23234234.234sdflkj.json"')
+    expect(() => read([tmpFileName])).toThrow(
+      new Error(`Unable to read file at: "${tmpFileName}"`)
     );
   });
 
@@ -39,18 +40,3 @@ describe("read", () => {
     removeFile();
   });
 });
-
-// helpers
-const tmpFileName = "./23234234.234sdflkj.json";
-
-const removeFile = () => {
-  // remove the file
-  try {
-    fs.unlinkSync(tmpFileName);
-  } catch {}
-};
-
-const createFile = () => {
-  // create a temp file for the test
-  fs.writeFileSync(tmpFileName, "slkjfhlsdfkghj");
-};

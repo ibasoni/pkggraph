@@ -1,19 +1,21 @@
 import fs from "fs";
+import path from "path";
 
 export const read = <T extends Object>(paths: string[]): T[] => {
-  return paths.map((path) => {
+  return paths.map((p) => {
     let content = "";
+    const fullPath = path.resolve(__dirname, p);
 
     try {
-      content = fs.readFileSync(path).toString();
+      content = fs.readFileSync(fullPath).toString();
     } catch (err) {
-      throw new Error(`Unable to read file at: "${path}"`);
+      throw new Error(`Unable to read file at: "${fullPath}"`);
     }
 
     try {
       return JSON.parse(content);
     } catch (err) {
-      throw new Error(`Unable to parse file at: "${path}"`);
+      throw new Error(`Unable to parse file at: "${p}"`);
     }
   });
 };

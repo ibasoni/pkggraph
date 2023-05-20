@@ -1,10 +1,15 @@
 {
-  "name": "crawler",
+  "name": "pkggraph",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "pkggraph": "bin/index.js"
+  },
   "scripts": {
-    "start": "nodemon",
+    "start": "ts-node src/index.ts && open ./graph.svg",
+    "dev": "nodemon",
+    "build": "tsc",
     "test": "jest --watchAll --coverage"
   },
   "keywords": [],
@@ -14,13 +19,20 @@
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-typescript": "^7.21.5",
     "@jest/globals": "^29.5.0",
+    "@tsconfig/node16": "^1.0.4",
     "@types/mocha": "^10.0.1",
+    "@types/node": "^20.2.1",
+    "@types/yargs": "^17.0.24",
     "jest": "^29.5.0",
     "nodemon": "^2.0.22",
     "ts-jest": "^29.1.0",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
   },
   "dependencies": {
-    "glob": "^10.2.5"
+    "glob": "^10.2.5",
+    "json-to-dot": "^1.1.0",
+    "node-graphviz": "^0.1.1",
+    "yargs": "^17.7.2"
   }
 }
