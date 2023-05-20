@@ -8,7 +8,7 @@ export const render = async ({ data, out, format }: DotRenderOptions) => {
   let fileContent = "";
   try {
     const dot = (jsonToDot as any)(data);
-    
+
     if (format === "dot") {
       fileContent = dot;
     } else {
@@ -20,6 +20,6 @@ export const render = async ({ data, out, format }: DotRenderOptions) => {
   }
 };
 
-interface DotRenderOptions extends Options {
+export interface DotRenderOptions extends Options {
   data: Data;
 }

@@ -4,7 +4,7 @@ import path from "path";
 export const read = <T extends Object>(paths: string[]): T[] => {
   return paths.map((p) => {
     let content = "";
-    const fullPath = path.resolve(__dirname, p);
+    const fullPath = path.resolve(".", p);
 
     try {
       content = fs.readFileSync(fullPath).toString();

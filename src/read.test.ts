@@ -2,7 +2,12 @@ import { describe, expect, test } from "@jest/globals";
 import { read } from "./read";
 import { PackageJson } from "./types";
 import fs from "fs";
-import { createFile, removeFile, tmpFileName } from "./test-utils";
+import {
+  createFile,
+  fullFileName,
+  removeFile,
+  tmpFileName,
+} from "./test-utils";
 
 describe("read", () => {
   test("read paths", () => {
@@ -26,7 +31,7 @@ describe("read", () => {
   test("throw an error when the file can't be found", () => {
     removeFile();
     expect(() => read([tmpFileName])).toThrow(
-      new Error(`Unable to read file at: "${tmpFileName}"`)
+      new Error(`Unable to read file at: "${fullFileName}"`)
     );
   });
 

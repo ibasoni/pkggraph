@@ -1,6 +1,8 @@
 import fs from "fs";
+import path from "path";
 
 export const tmpFileName = "./test-package-json-mock.json";
+export const fullFileName = path.resolve(".", tmpFileName);
 
 export const removeFile = () => {
   // remove the file

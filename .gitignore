@@ -2,3 +2,5 @@ node_modules
 coverage
 bin
 dist
+graph.svg
+graph.dot

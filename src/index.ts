@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-import { loadOptionsFromCLI } from "./cli";
+import { loadOptions } from "./cli";
 import { filter } from "./filter";
 import { find } from "./find";
 import { parse } from "./parse";
@@ -25,5 +25,5 @@ const run = async ({ out, format }: Options) => {
   render({ data, out, format });
 };
 
-const options = loadOptionsFromCLI();
+const options = loadOptions();
 run(options);
