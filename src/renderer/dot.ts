@@ -12,7 +12,7 @@ export const render = async ({ data, out, format }: DotRenderOptions) => {
     if (format === "dot") {
       fileContent = dot;
     } else {
-      fileContent = await graphviz.circo(dot, "svg");
+      fileContent = await graphviz.dot(dot, "svg");
     }
     fs.writeFileSync(`${out}.${format}`, fileContent);
   } catch (err) {
