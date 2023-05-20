@@ -26,7 +26,6 @@ const run = async ({ out, format, ignore }: Options) => {
 };
 
 const options = loadOptions();
-console.log(options);
 run(options);
 
 export { find, parse, read, render, filter };
