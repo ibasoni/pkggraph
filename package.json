@@ -19,7 +19,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:badges": "npm run test:coverage && jest-coverage-badges",
-    "publish": "npm run build && npm publish --access public",
+    "publish": "npm run build && npm publish --access public"
   },
   "keywords": [
     "mono-repo",
