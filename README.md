@@ -1,5 +1,5 @@
 # package-json-graph
-![Coverage Badge](coverage/badge-statements.svg)  
+![Coverage Badge](https://raw.githubusercontent.com/ibasoni/pkggraph/master/coverage/badge-statements.svg)  
 Generate a graph using several package.json files (suitable for mono-repo codebases)
 
 ## Start
@@ -7,7 +7,7 @@ Generate a graph using several package.json files (suitable for mono-repo codeba
 npx package-json-graph
 ```
 This will generate a file `./graph.svg` similar to this one (generated for React repo from Github):  
-![React's package json graph](docs/react-repo-graph.svg)
+![React's package json graph](https://raw.githubusercontent.com/ibasoni/pkggraph/master/docs/react-repo-graph.svg)
 
 ## Install
 ```
