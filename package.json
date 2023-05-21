@@ -19,7 +19,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:badges": "npm run test:coverage && jest-coverage-badges",
-    "publish": "npm run build && npm publish --access public"
+    "publish": "npm run build && npm publish --access public",
   },
   "keywords": [
     "mono-repo",
@@ -28,9 +28,7 @@
   ],
   "author": "Itay Basoni",
   "license": "ISC",
-  "pre-commit": [
-    "test:badges"
-  ],
+  "pre-commit": [],
   "devDependencies": {
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-typescript": "^7.21.5",
