@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "types": "bin/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ibasoni/pkggraph"
+  },
   "bin": {
     "package-json-graph": "bin/index.js"
   },
@@ -17,8 +21,12 @@
     "test:badges": "npm run test:coverage && jest-coverage-badges",
     "publish": "npm run build && npm publish --access public"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "mono-repo",
+    "package.json",
+    "dependency graph"
+  ],
+  "author": "Itay Basoni",
   "license": "ISC",
   "pre-commit": [
     "test:badges"
