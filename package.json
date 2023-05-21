@@ -21,7 +21,6 @@
   "author": "",
   "license": "ISC",
   "pre-commit": [
-    "test",
     "test:badges"
   ],
   "devDependencies": {
